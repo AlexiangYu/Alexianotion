@@ -1,5 +1,19 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+
+
+
+## Overview
+
+
+- 后端平台：Convex 简化开发流程
+- 登录/身份验证：Clerk
+- Zustand 状态管理：管理用户状态
+- shadcn/ui 
+- 图床：EdgeStore
+- Editor: blocknote 基于 Prosemirror / yjs
+
+
 ## Getting Started
 
 First, run the development server:
