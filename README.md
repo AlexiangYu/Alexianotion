@@ -5,6 +5,8 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Overview
 
+类似 Notion 的笔记类工作平台
+
 
 - 后端平台：Convex 简化开发流程
 - 登录/身份验证：Clerk
@@ -12,6 +14,30 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 - shadcn/ui 
 - 图床：EdgeStore
 - Editor: blocknote 基于 Prosemirror / yjs
+
+
+
+
+
+
+## 页面对应的功能与路由
+
+### 首页 `/` -> `marketing`
+- 欢迎页
+- 登录账号
+
+### 文档 `/documents/:id`
+- 侧边工具栏
+- 文档编辑详情
+
+### 预览发布 `/preview/:id`
+- 文档静态预览
+
+
+
+
+
+
 
 
 ## Getting Started
