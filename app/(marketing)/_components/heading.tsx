@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button"
 import { Spinner } from "@/components/spinner"
 import { SignInButton } from "@clerk/clerk-react"
 
-const Heading = () => {
+export const Heading = () => {
     const { isAuthenticated, isLoading } = useConvexAuth();
     return (
         <div className="max-w-3xl spaced-y-4 dark:bg-[#1F1F1F]">
@@ -45,5 +45,3 @@ const Heading = () => {
         </div>
     );
 }
- 
-export default Heading;

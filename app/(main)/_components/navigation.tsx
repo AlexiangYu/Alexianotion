@@ -1,18 +1,19 @@
-import { cn } from "@/lib/utils"
-import { ChevronsLeft, MenuIcon, Plus, PlusCircle, Search, Settings, Trash } from "lucide-react"
-import { useParams, usePathname, useRouter } from "next/navigation"
 import { useEffect, useRef, useState } from "react"
 import { useMediaQuery } from "usehooks-ts"
-import { UserItem } from "./user-item"
 import { useMutation } from "convex/react"
+import { cn } from "@/lib/utils"
 import { api } from "@/convex/_generated/api"
+import { toast } from "sonner"
+import { useParams, usePathname, useRouter } from "next/navigation"
+import { useSearch } from "@/hooks/use-search"
+import { useSettings } from "@/hooks/use-settings"
+
+import { ChevronsLeft, MenuIcon, Plus, PlusCircle, Search, Settings, Trash } from "lucide-react"
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
+import { UserItem } from "./user-item"
 import { Item } from "./item"
 import { DocumentList } from "./document-list"
 import { TrashBox } from "./trash-box"
-import { toast } from "sonner"
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
-import { useSearch } from "@/hooks/use-search"
-import { useSettings } from "@/hooks/use-settings"
 import { NavBar } from "./navbar"
 
 /**
@@ -74,7 +75,7 @@ export const Navigation = () => {
             navbarRef.current.style.setProperty("width", `calc(100% - ${newWidth}px)`)
         }
     }
-    const handleMouseUp = (_: MouseEvent) => {
+    const handleMouseUp = () => {
         isResizingRef.current = false
         document.removeEventListener("mousemove", handleMouseMove)
         document.removeEventListener("mouseup", handleMouseUp)

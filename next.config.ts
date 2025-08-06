@@ -8,7 +8,7 @@ const nextConfig = {
           }
       ]
   },
-  async redirects() {
+  async redirects() {   // 访问根路径 '/' 时，自动重定向到 /marketing 页面
       return [
           {
               source: '/',

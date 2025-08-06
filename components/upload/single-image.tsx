@@ -1,5 +1,8 @@
 'use client';
 
+import * as React from 'react';
+import { useDropzone, type DropzoneOptions } from 'react-dropzone';
+import Image from 'next/image';
 import { cn } from '@/lib/utils';
 import {
   AlertCircleIcon,
@@ -7,8 +10,6 @@ import {
   UploadCloudIcon,
   XIcon,
 } from 'lucide-react';
-import * as React from 'react';
-import { useDropzone, type DropzoneOptions } from 'react-dropzone';
 import { ProgressCircle } from './progress-circle';
 import { formatFileSize, useUploader } from './uploader-provider';
 
@@ -176,7 +177,7 @@ const SingleImageDropzone = React.forwardRef<
         <input ref={ref} {...getInputProps()} {...props} />
 
         {displayUrl ? (
-          <img
+          <Image
             className="h-full w-full rounded-md object-cover"
             src={displayUrl}
             alt={fileState?.file.name ?? 'uploaded image'}
