@@ -57,7 +57,7 @@ export const Item = ({ label, onClick, icon: Icon, level, active, documentIcon, 
 
         if (!id) return;
         const promise = archive({ id })
-            // .then((documentId) => router.push(`/documents`))
+            .then(() => router.push(`/documents`))
         toast.promise(promise, {
             loading: "Moving to trash...",
             success: "Note moved to trash!",
