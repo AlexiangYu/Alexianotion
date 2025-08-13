@@ -2,8 +2,8 @@
 
 import { useMemo } from "react"
 import dynamic from "next/dynamic"
+import { useParams } from "next/navigation"
 import { useMutation, useQuery } from "convex/react"
-import { useParams } from "next/navigation";
 
 import { api } from "@/convex/_generated/api"
 import { Id } from "@/convex/_generated/dataModel"

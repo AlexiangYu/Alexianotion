@@ -8,6 +8,8 @@ import { EdgeStoreProvider } from '../lib/edgestore';
 import { ConvexClientProvider } from "@/components/providers/convex-provider";
 import { ModalProvider } from "@/components/providers/modal-provider";
 
+export const dynamic = 'force-dynamic';
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -21,20 +23,21 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Alexianotion",
   description: "The official website of Alexianotion",
-  // icons: {
-  //   icon: [
-  //     {
-  //       media: "(prefers-color-scheme: light)",
-  //       url: "/favicon-light.svg",
-  //       herf: "/favicon-light.svg",
-  //     },
-  //     {
-  //       media: "(prefers-color-scheme: dark)",
-  //       url: "/favicon-dark.svg",
-  //       herf: "/favicon-dark.svg",
-  //     }
-  //   ]
-  // }
+  icons: {
+    icon: [
+      {
+        media: "(prefers-color-scheme: light)",
+        url: "/logo.svg",
+        href: "/logo.svg",
+
+      },
+      {
+        media: "(prefers-color-scheme: dark)",
+        url: "/logo-dark.svg",
+        href: "/logo-dark.svg",
+      }
+    ]
+  }
 };
 
 export default function RootLayout({
