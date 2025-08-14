@@ -2,6 +2,8 @@ import { Heading } from "../_components/heading";
 import { Heroes } from "../_components/heroes";
 import { Footer } from "../_components/footer";
 
+export const dynamic = 'force-dynamic'; 
+
 const MarketingPage = () => {
     return (
         <div className="min-h-full flex flex-col dark:bg-[#1F1F1F]">
