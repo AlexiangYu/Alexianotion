@@ -10,7 +10,7 @@ const Error = () => {
         <h2 className="text-xl font-medium">
             Oops! Something went wrong.
         </h2>
-        <Button asChild>
+        <Button asChild>    {/* 向下传递属性 */}
             <Link href="/documents">
                 Go back
             </Link>

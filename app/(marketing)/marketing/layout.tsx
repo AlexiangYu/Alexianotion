@@ -1,6 +1,6 @@
 import { Navbar } from "../_components/navbar";
 
-export const dynamic = 'force-dynamic'; 
+// export const dynamic = 'force-dynamic'; 
 
 const MarketingLayout = ({ children }: {
   children: React.ReactNode;
