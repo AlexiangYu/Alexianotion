@@ -8,6 +8,8 @@ import { Button } from "@/components/ui/button"
 import { Spinner } from "@/components/spinner"
 import { SignInButton } from "@clerk/clerk-react"
 
+export const dynamic = 'force-dynamic';
+
 export const Heading = () => {
     const { isAuthenticated, isLoading } = useConvexAuth();
     return (
@@ -22,7 +24,7 @@ export const Heading = () => {
 
             {isAuthenticated && !isLoading && (
                 <Button asChild>
-                    <Link href={"/documents"}>
+                    <Link href="/documents">
                         Enter your notebook
                         <ArrowRight className="h-4 w-4 ml-2" />                    
                     </Link>
@@ -31,11 +33,9 @@ export const Heading = () => {
             {!isAuthenticated && !isLoading &&
                 (<>
                     <SignInButton mode="modal">
-                        <Button asChild>
-                            <Link href={"/documents"}>
-                                Enter your notebook
-                                <ArrowRight className="h-4 w-4 ml-2" />
-                            </Link>
+                        <Button>
+                            Get your free trial
+                            <ArrowRight className="h-4 w-4 ml-2" />
                         </Button>
                     </SignInButton>
 

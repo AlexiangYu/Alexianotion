@@ -9,6 +9,8 @@ import { ModeToggle } from "@/components/mode-toggle";
 import { Spinner } from "@/components/spinner";
 import Link from "next/link";
 
+export const dynamic = 'force-dynamic';
+
 export const Navbar = () => {
     const scrolled = useScrollTop();
     const { isAuthenticated, isLoading } = useConvexAuth()

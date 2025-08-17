@@ -47,14 +47,14 @@ UI：
 │   │   └── marketing\
 │   ├── (public)\
 │   │   └── (routes)\
-│   ├── api\
-│   │   └── edgestore\
+│   ├── preview\
+│   │   ├── [documentId]\
+│   │   └── layout.tsx
 │   ├── error.tsx
 │   ├── globals.css
 │   ├── layout.tsx
-│   └── preview\
-│       ├── [documentId]\
-│       └── layout.tsx
+│   └── api\
+│       └── edgestore\
 ├── components\
 │   ├── editor.tsx
 │   ├── modals\

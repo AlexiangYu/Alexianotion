@@ -1,35 +1,23 @@
+
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import { ThemeProvider } from "next-themes";
-import { Toaster } from "sonner"
-
-import "./globals.css";
+import { Inter } from "next/font/google";
 import { EdgeStoreProvider } from '../lib/edgestore';
+import "./globals.css";
+import { ThemeProvider } from "@/components/providers/theme-provider";
 import { ConvexClientProvider } from "@/components/providers/convex-provider";
-import { ModalProvider } from "@/components/providers/modal-provider";
+import { Toaster } from 'sonner'
 
-export const dynamic = 'force-dynamic';
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Alexianotion",
-  description: "The official website of Alexianotion",
+  title: "Notion",
+  description: "Good for you",
   icons: {
     icon: [
       {
         media: "(prefers-color-scheme: light)",
         url: "/logo.svg",
         href: "/logo.svg",
-
       },
       {
         media: "(prefers-color-scheme: dark)",
@@ -45,9 +33,9 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (  // 忽略水和警告
-    <html lang="en" suppressHydrationWarning>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+  return (
+    <html className="h-full  text-white" lang="en" suppressHydrationWarning>
+      <body className={inter.className}>
         <ConvexClientProvider>
           <EdgeStoreProvider>
             <ThemeProvider
@@ -58,11 +46,11 @@ export default function RootLayout({
               storageKey="joint-theme"
             >
               <Toaster position="bottom-center" />
-              <ModalProvider />
               {children}
             </ThemeProvider>
           </EdgeStoreProvider>
         </ConvexClientProvider>
+
       </body>
     </html>
   );
